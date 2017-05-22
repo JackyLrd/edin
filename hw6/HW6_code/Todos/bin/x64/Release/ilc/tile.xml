@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tile>
+  <visual>
+
+    <binding template="TileSmall">
+      <image src="ms-appx:///Assets/background.jpg" placement="background"/>
+      <text>Small</text>
+    </binding>
+
+    <binding template="TileMedium">
+      <image src="ms-appx:///Assets/background.jpg" placement="background"/>
+      <text>Medium</text>
+    </binding>
+
+    <binding template="TileWide">
+      <image src="ms-appx:///Assets/background.jpg" placement="background"/>
+      <text>Wide</text>
+    </binding>
+
+    <binding template="TileLarge">
+      <image src="ms-appx:///Assets/background.jpg" placement="background"/>
+      <text>Large</text>
+    </binding>
+
+  </visual>
+</tile>

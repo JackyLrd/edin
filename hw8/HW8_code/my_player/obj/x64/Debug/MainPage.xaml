@@ -1,0 +1,37 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="my_player.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:my_player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="thePage">
+    <Page.Resources>
+        <local:ProgressConverter x:Key="PrgConverter"/>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <MediaElement x:ConnectionId='2' Name="my_media" Source="Assets/music.mp3" AutoPlay="False" Grid.Row="0"                                                                        />
+        <Slider x:ConnectionId='3' Name="Progress" Minimum="0" Width="auto" Value="{Binding ElementName=my_media, Path=Position, Mode=TwoWay, Converter={StaticResource PrgConverter}}" Grid.Row="1"                                         />
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar x:ConnectionId='4' Name="Bar">
+            <AppBarButton x:ConnectionId='5' Label="Play/Pause" Name="PlayAndPause" Icon="Play"                           />
+            <AppBarButton x:ConnectionId='6' Label="Stop" Name="Stop" Icon="Stop"                   />
+            <AppBarButton x:ConnectionId='7' Label="Volume" Name="VolumeControl" Icon="Volume">
+                <AppBarButton.Flyout>
+                    <Flyout>
+                        <Slider x:ConnectionId='10' Name="VolumeSlider" Orientation="Vertical" StepFrequency="0.01" Maximum="1" Height="150" Width="37"                                         />
+                    </Flyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton x:ConnectionId='8' Label="FullScreen" Name="FullScreen" Icon="FullScreen"                         />
+            <AppBarButton x:ConnectionId='9' Label="LocalFile" Name="LocalFile" Icon="OpenFile"                        />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+
